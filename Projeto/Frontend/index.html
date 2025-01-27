@@ -3,35 +3,86 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Clone do Spotify">
-        <meta name="keywords" content="programação,html,css,javascript,música">
+        <meta name="keywords" content="programação, html, css, javascript, música">
         <meta name="author" content="Amanda Castilho">
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="shortcut icon" href="../imagens/spotify.png" type="image/x-icon">
         <title>Spotify Clone</title>
     </head>
 
-<body>
+    <body>
 
-    <header>
+        <header>
 
-        <h1>Spotify Clone</h1>
-        <input type="text" id="search" placeholder="Pesquisar músicas">
+            <div class="header-content">
+                <h1>Spotify Clone</h1>
+                <input  type="text"  id="search"  placeholder="Pesquisar músicas, artistas ou álbuns" aria-label="Pesquisar">
+            </div>
 
-    </header>
+        </header>
 
-    <main>
+        <!-- Layout principal -->
 
-        <div id="playlists"></div>
+        <main>
+            <!-- Barra lateral com playlists -->
 
-        <div id="player">
-            <audio controls id="audio-player"></audio>
-        </div>
+            <aside id="playlists">
+                <nav aria-label="Playlists">
+                    <ul>
+                        <li><a href="#">Descobertas da Semana</a></li>
+                        <li><a href="#">Top Hits Brasil</a></li>
+                        <li><a href="#">Pop Internacional</a></li>
+                        <li><a href="#">Clássicos do Rock</a></li>
+                    </ul>
+                </nav>
+            </aside>
 
-    </main>
+            <!-- Área de conteúdo -->
 
-    <script src="js/scripts.js"></script>
+            <section id="content">
+                <h2>Bem-vindo ao Spotify Clone</h2>
+                <p>Explore suas playlists favoritas e curta as melhores músicas!</p>
 
-</body>
+                <!-- Exemplo de álbum/música -->
+                <div class="album">
+                    <img src="../imagens/album-cover.jpg" alt="Capa do álbum">
+
+                    <div class="album-info">
+                        <h3>Nome do Álbum</h3>
+                        <p>Artista</p>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- Player fixo -->
+
+        <footer id="player">
+
+            <div class="player-info">
+                <img src="../imagens/track-thumbnail.jpg" alt="Capa da música atual">
+                <div>
+                    <p class="track-name">Nome da Música</p>
+                    <p class="artist-name">Nome do Artista</p>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button aria-label="Reproduzir anterior">⏮️</button>
+                <button aria-label="Reproduzir/Pausar">⏯️</button>
+                <button aria-label="Próxima música">⏭️</button>
+            </div>
+            
+            <audio controls id="audio-player" style="display: none;"></audio>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="js/scripts.js"></script>
+
+    </body>
 
 </html>

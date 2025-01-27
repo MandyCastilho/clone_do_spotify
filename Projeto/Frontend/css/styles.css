@@ -1,27 +1,202 @@
 @charset "UTF-8";
 
-body {
-    font-family: Arial, sans-serif;
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Spotify Circular', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
     background-color: #121212;
+    color: #b3b3b3;
+}
+
+/* Estilos do cabeçalho */
+header {
+    background-color: #1db954;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: white;
 }
 
-header {
-    padding: 1rem;
-    background-color: #1db954;
+header h1 {
+    font-size: 1.5rem;
+}
+
+header input[type="text"] {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 20px;
+    width: 250px;
+    font-size: 1rem;
+    outline: none;
+}
+
+/* Layout principal */
+main {
+    display: flex;
+    min-height: calc(100vh - 120px); /* Altura dinâmica considerando o header e o player */
 }
 
 #playlists {
+    background-color: #181818;
+    width: 230px;
     padding: 1rem;
 }
 
+#playlists nav ul {
+    list-style: none;
+}
+
+#playlists nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #b3b3b3;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#playlists nav ul li a:hover {
+    background-color: #282828;
+    color: white;
+}
+
+/* Área de conteúdo */
+#content {
+    flex: 1;
+    padding: 2rem;
+    background-color: #121212;
+}
+
+#content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+#content p {
+    margin-bottom: 2rem;
+}
+
+.album {
+    display: flex;
+    align-items: center;
+    background-color: #181818;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.album:hover {
+    transform: scale(1.05);
+}
+
+.album img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    margin-right: 1rem;
+}
+
+.album-info h3 {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.album-info p {
+    font-size: 0.9rem;
+    color: #b3b3b3;
+}
+
+/* Player fixo */
 #player {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #333;
+    background-color: #181818;
     padding: 1rem;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #282828;
+    color: #b3b3b3;
+}
+
+#player .player-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#player .player-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+}
+
+#player .track-name {
+    font-size: 1rem;
+    color: white;
+}
+
+#player .artist-name {
+    font-size: 0.9rem;
+    color: #b3b3b3;
+}
+
+#player .controls {
+    display: flex;
+    gap: 1rem;
+}
+
+#player button {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+#player button:hover {
+    color: white;
+}
+
+/* Transições */
+a, button {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header input[type="text"] {
+        width: 200px;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    #playlists {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #content {
+        padding: 1rem;
+    }
+
+    #player .player-info img {
+        width: 50px;
+        height: 50px;
+    }
 }
