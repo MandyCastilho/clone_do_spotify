@@ -75,7 +75,7 @@ function searchMusic(query) {
                         (music) => `
                         <li>
                             <div class="album">
-                                <img src="../imagens/album-cover.jpg" alt="${music.name}">
+                                <img src="${music.cover || '../imagens/album-cover.jpg'}" alt="${music.name}">
                                 <div class="album-info">
                                     <h3>${music.name}</h3>
                                     <p>${music.artist}</p>
@@ -109,7 +109,7 @@ playlists.addEventListener('click', (e) => {
                         (music) => `
                         <li>
                             <div class="album">
-                                <img src="../imagens/album-cover.jpg" alt="${music.name}">
+                                <img src="${music.cover || '../imagens/album-cover.jpg'}" alt="${music.name}">
                                 <div class="album-info">
                                     <h3>${music.name}</h3>
                                     <p>${music.artist}</p>
