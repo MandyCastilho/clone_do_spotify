@@ -152,3 +152,23 @@ searchInput.addEventListener('input', (e) => {
 // Inicializando playlists na barra lateral
 renderPlaylists();
 
+// document.getElementById('add-music-btn').addEventListener('click', () => {
+//     const name = document.getElementById('music-name').value;
+//     const artist = document.getElementById('artist-name').value;
+//     const src = document.getElementById('music-src').value;
+//     const playlist = document.getElementById('playlist-name').value;
+
+//     if (name && artist && src && playlist) {
+//         // Adiciona a nova música à lista
+//         musicLibrary.push({ name, artist, src, playlist });
+
+//         // Atualiza as playlists e conteúdo na tela
+//         renderPlaylists();
+//         alert('Música adicionada com sucesso!');
+//     } else {
+//         alert('Preencha todos os campos antes de adicionar.');
+//     }
+// });
+
+
+
